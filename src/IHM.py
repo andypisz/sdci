@@ -46,3 +46,4 @@ class IHM:
             self.askUserInput()
             self.printUserInput()
             monGeneralController = GeneralController(self.userInput)
+            monGeneralController.checkRequete()

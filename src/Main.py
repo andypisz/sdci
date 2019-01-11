@@ -1,4 +1,6 @@
-from IHM import IHM
+# coding: utf-8
 
-monIHM = IHM()
+import IHM
+
+monIHM = IHM.IHM()
 monIHM.launchIHM()

@@ -1,0 +1,3 @@
+docker rm mainpython
+docker build --tag="mainpython:dockerfile" .
+docker run mainpython:dockerfile

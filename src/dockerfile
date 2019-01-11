@@ -1,0 +1,12 @@
+FROM centos:7
+MAINTAINER andy.piszyna@etud.insa-toulouse.fr
+
+ADD Main.py /
+ADD IHM.py /
+ADD GeneralController.py /
+ADD Global.py /
+
+RUN yum update -y
+RUN yum install -y net-tools
+
+CMD python /Main.py

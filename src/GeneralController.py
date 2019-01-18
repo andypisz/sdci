@@ -14,6 +14,8 @@ class GeneralController:
             requests.put(url, data=data)
         elif self.requete == 2:
             print("case 2")
+            url = 'http://127.0.0.1:5001/restapi/compute/cvim1/vnf1'
+            requests.delete(url)
         elif self.requete == 3:
             print("case 3")
         elif self.requete == 4:

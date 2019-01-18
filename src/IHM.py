@@ -3,6 +3,7 @@
 import Global
 from GeneralController import GeneralController
 import sys
+import re
 
 
 class IHM:
@@ -19,7 +20,7 @@ class IHM:
             print(i, ": ", action)
             i += 1
 
-    def askUserInput(self):
+    def askUserInputMainMenu(self):
         input_correct = False
         while not input_correct:
             user_input = input()
@@ -36,6 +37,16 @@ class IHM:
             except ValueError:
                 print("La valeur entrée est incorrecte, entrez un nombre entre 0 et ", len(self.actions), ".")
 
+    def askUserInputVnfName(self):
+        input_correct = False
+        while not input_correct:
+            user_input = input()
+            input_correct = re.match('^[\w-]+$', str) is not None
+            if (input_correct):
+                return user_input
+            else:
+                print("La valeur entrée est incorrecte, entrez un uniquement des caractères alphanumériques.")
+
     def printUserInput(self):
         print("Vous avez choisi : ", self.userInput,"\n")
 
@@ -45,7 +56,7 @@ class IHM:
     def launchIHM(self):
         while(True):
             self.printMenu()
-            self.askUserInput()
+            self.askUserInputMainMenu()
             self.printUserInput()
             monGeneralController = GeneralController(self.userInput)
             monGeneralController.checkRequete()

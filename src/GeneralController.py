@@ -1,4 +1,5 @@
 # coding: utf-8
+import requests
 
 class GeneralController:
 
@@ -8,6 +9,9 @@ class GeneralController:
     def checkRequete(self):
         if self.requete == 1:
             print("case 1")
+            url = 'http://127.0.0.1:5001/restapi/compute/cvim1/new_vnf'
+            data = '{"image":"ubuntu:trusty", "network":"(id=input,ip=10.0.0.1/24),(id=output,ip=20.0.0.1/24)"}'
+            requests.put(url, data=data)
         elif self.requete == 2:
             print("case 2")
         elif self.requete == 3:

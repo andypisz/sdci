@@ -40,12 +40,15 @@ class IHM:
     def askUserInputVnfName(self):
         input_correct = False
         while not input_correct:
-            user_input = input()
-            input_correct = re.match('^[\w-]+$', str) is not None
+            user_input = str(input())
+            input_correct = re.match('^[\w-]+$', user_input) is not None
             if (input_correct):
                 return user_input
             else:
                 print("La valeur entrée est incorrecte, entrez un uniquement des caractères alphanumériques.")
+
+    def printMessage(self, message):
+        print(message)
 
     def printUserInput(self):
         print("Vous avez choisi : ", self.userInput,"\n")
@@ -58,5 +61,5 @@ class IHM:
             self.printMenu()
             self.askUserInputMainMenu()
             self.printUserInput()
-            monGeneralController = GeneralController(self.userInput)
+            monGeneralController = GeneralController(self.userInput, self)
             monGeneralController.checkRequete()

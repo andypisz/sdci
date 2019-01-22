@@ -17,7 +17,7 @@ class IHM:
         print("\nChoisissez une option en entrant le numéro correspondant :")
         print("==========================================================\n")
         for action in self.actions:
-            print(i, ": ", action)
+            print(str(i)+": "+action)
             i += 1
 
     def askUserInputMainMenu(self):
@@ -33,9 +33,9 @@ class IHM:
                     self.userInput = int_user_input
                     input_correct = True
                 else:
-                    print("La valeur entrée est incorrecte, entrez un nombre entre 0 et ", len(self.actions), ".")
+                    print("La valeur entrée est incorrecte, entrez un nombre entre 0 et "+str(len(self.actions))+".")
             except ValueError:
-                print("La valeur entrée est incorrecte, entrez un nombre entre 0 et ", len(self.actions), ".")
+                print("La valeur entrée est incorrecte, entrez un nombre entre 0 et "+str(len(self.actions))+".")
 
     def askUserInputVnfName(self):
         input_correct = False
@@ -51,7 +51,7 @@ class IHM:
         print(message)
 
     def printUserInput(self):
-        print("Vous avez choisi : ", self.userInput,"\n")
+        print("Vous avez choisi : "+ str(self.userInput)+"\n")
 
     def getUserInput(self):
         return self.userInput
